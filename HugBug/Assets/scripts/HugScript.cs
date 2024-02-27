@@ -10,6 +10,7 @@ public class HugScript : MonoBehaviour
 
     [SerializeField]  int hugCount = 0;
     GameObject nearbyFriend;
+    FriendHugLimit friendsPart;
     bool CloseEnough = false;
     void Start()
     {
@@ -23,17 +24,18 @@ public class HugScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("collision Enter");
+        Debug.Log("FRIEND!");
         if (collision.gameObject.tag == "Friend")
         {
-            //nearbyFriend = collision.gameObject;
+            nearbyFriend = collision.gameObject;
+            friendsPart = nearbyFriend.GetComponent<FriendHugLimit>();
             CloseEnough = true;
 
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("Collision Exit");
+        Debug.Log(":'(");
         if (collision.gameObject.tag == "Friend")
         {
             CloseEnough = false;
@@ -41,11 +43,12 @@ public class HugScript : MonoBehaviour
     }
     void OnHug()
     {
-        Debug.Log("Hug");
-        if (CloseEnough == true)
+        Debug.Log("Hug?");
+        if (CloseEnough == true && friendsPart.beenHugged == false)
         {
-            Debug.Log("Hug pt.2");
+            Debug.Log("Hug!");
             hugCount++;
+            friendsPart.beenHugged = true;
             hugCounterText.text = "Hugs Given: " + hugCount;
         }
     }
