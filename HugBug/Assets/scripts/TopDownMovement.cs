@@ -8,6 +8,7 @@ public class TopDownMovement: MonoBehaviour
     Rigidbody2D rb;
     [SerializeField]
     float moveSpeed = 5.0f;
+    Vector2 vec2;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class TopDownMovement: MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
 
-        rb.velocity = new Vector2(x, y) * moveSpeed * Time.deltaTime * 60;
-
+        vec2 = new Vector2(x, y) *( moveSpeed * Time.deltaTime * 60);
+        rb.velocity = vec2.normalized;
     }
 }
