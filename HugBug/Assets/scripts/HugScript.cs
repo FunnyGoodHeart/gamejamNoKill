@@ -21,17 +21,17 @@ public class HugScript : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("collision Enter");
-        if(gameObject.gameObject.tag == "Friend")
+        if (collision.gameObject.tag == "Friend")
         {
             //nearbyFriend = collision.gameObject;
             CloseEnough = true;
-        }
 
+        }
     }
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         Debug.Log("Collision Exit");
         if (collision.gameObject.tag == "Friend")
