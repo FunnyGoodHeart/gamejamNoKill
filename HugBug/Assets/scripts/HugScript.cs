@@ -9,26 +9,16 @@ public class HugScript : MonoBehaviour
     [SerializeField] TextMeshProUGUI hugCounterText;
 
     [SerializeField]  int hugCount = 0;
-    GameObject nearbyFriend;
-    FriendHugLimit friendsPart;
+    GameObject nearbyPerson;
+    FriendHugLimit personsPart;
     bool CloseEnough = false;
-    void Start()
-    {
-        
-    }
-
-
-    void Update()
-    {
-        
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("FRIEND!");
-        if (collision.gameObject.tag == "Friend")
+        Debug.Log("FRIEND?");
+        if (collision.gameObject.tag == "Friend" || collision.gameObject.tag == "NonFriend")
         {
-            nearbyFriend = collision.gameObject;
-            friendsPart = nearbyFriend.GetComponent<FriendHugLimit>();
+            nearbyPerson = collision.gameObject;
+            personsPart = nearbyPerson.GetComponent<FriendHugLimit>();
             CloseEnough = true;
 
         }
@@ -36,7 +26,7 @@ public class HugScript : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         Debug.Log(":'(");
-        if (collision.gameObject.tag == "Friend")
+        if (collision.gameObject.tag == "Friend" || collision.gameObject.tag == "NonFriend")
         {
             CloseEnough = false;
         }
@@ -44,12 +34,20 @@ public class HugScript : MonoBehaviour
     void OnHug()
     {
         Debug.Log("Hug?");
-        if (CloseEnough == true && friendsPart.beenHugged == false)
+        if(CloseEnough == true)
         {
-            Debug.Log("Hug!");
-            hugCount++;
-            friendsPart.beenHugged = true;
-            hugCounterText.text = "Hugs Given: " + hugCount;
+            if (personsPart.beenHugged == false && personsPart.Friend == true)
+            {
+                Debug.Log("Hug!");
+                hugCount++;
+                personsPart.beenHugged = true;
+                hugCounterText.text = "Hugs Given: " + hugCount;
+            }
+            else if (personsPart.NonFriend == true)
+            {
+                Debug.Log("No Hug ;-;");
+                personsPart.attemptAtHug = true;
+            }
         }
     }
 }
