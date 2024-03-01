@@ -7,11 +7,18 @@ using TMPro;
 public class HugScript : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI hugCounterText;
-
     [SerializeField]  int hugCount = 0;
+    [SerializeField] float hugCoolDown = 1.5f;
+    float hugCoolDownTimer;
+    public int howLongSad = 3;
+    public bool Crying;
     GameObject nearbyPerson;
     FriendHugLimit personsPart;
     bool CloseEnough = false;
+    private void Update()
+    {
+        hugCoolDownTimer += Time.deltaTime;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("FRIEND?");
@@ -34,8 +41,9 @@ public class HugScript : MonoBehaviour
     void OnHug()
     {
         Debug.Log("Hug?");
-        if(CloseEnough == true)
+        if(CloseEnough == true && hugCoolDownTimer >= hugCoolDown)
         {
+            hugCoolDownTimer = 0;
             if (personsPart.beenHugged == false && personsPart.Friend == true)
             {
                 Debug.Log("Hug!");
@@ -43,9 +51,10 @@ public class HugScript : MonoBehaviour
                 personsPart.beenHugged = true;
                 hugCounterText.text = "Hugs Given: " + hugCount;
             }
-            else if (personsPart.NonFriend == true)
+            else if (personsPart.NonFriend == true && personsPart.justBeenHugged == false)
             {
                 Debug.Log("No Hug ;-;");
+                Crying = true;
                 personsPart.attemptAtHug = true;
             }
         }

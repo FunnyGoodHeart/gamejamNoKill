@@ -671,11 +671,14 @@ MonoBehaviour:
   NonFriend: 1
   player: {fileID: 1194984204}
   childCollision: {fileID: 1260163756}
+  timeUntilStartFade: 0
   betweenfade: 0.3
   napUntilRelocated: 10
   distroyGameObject: 5
   beenHugged: 0
+  nonFriendHugCoolDown: 4
   attemptAtHug: 0
+  justBeenHugged: 0
 --- !u!61 &707649183
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -895,6 +898,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5714470346878823265, guid: 4004fba7a0b1a5746b44ebb265bcaa75, type: 3}
   m_PrefabInstance: {fileID: 3750301015129557985}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1194984212
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194984204}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6878452b63072d9479cf137adab0adbe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1204940670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1624,6 +1648,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 6598524722852855670, guid: 4004fba7a0b1a5746b44ebb265bcaa75, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598524722852855670, guid: 4004fba7a0b1a5746b44ebb265bcaa75, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -788782643, guid: de12d47aeac4c6643b2dfdce84641681, type: 3}
+    - target: {fileID: 6598524722852855670, guid: 4004fba7a0b1a5746b44ebb265bcaa75, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7503649154874934592, guid: 4004fba7a0b1a5746b44ebb265bcaa75, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.52
@@ -1665,13 +1701,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8946825406441664839, guid: 4004fba7a0b1a5746b44ebb265bcaa75, type: 3}
+      propertyPath: howLongSad
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8946825406441664839, guid: 4004fba7a0b1a5746b44ebb265bcaa75, type: 3}
       propertyPath: hugCounterText
       value: 
       objectReference: {fileID: 882127883}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5714470346878823265, guid: 4004fba7a0b1a5746b44ebb265bcaa75, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1194984212}
   m_SourcePrefab: {fileID: 100100000, guid: 4004fba7a0b1a5746b44ebb265bcaa75, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

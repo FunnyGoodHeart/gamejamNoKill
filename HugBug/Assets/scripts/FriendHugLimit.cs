@@ -12,19 +12,31 @@ public class FriendHugLimit : MonoBehaviour
     [Header("Main Settings")]
     [SerializeField] GameObject player;
     [SerializeField] GameObject childCollision;
+    [SerializeField] float timeUntilStartFade;
     [SerializeField] float betweenfade = .3f;
+
     [Header("Friend Settings")]
     [SerializeField] int napUntilRelocated = 10;
     [SerializeField] int distroyGameObject = 5;
     public bool beenHugged = false;
-    [Header("NonFriend Settings")]
-    public bool attemptAtHug = false;
 
-    Animator ani;
+
+    [Header("NonFriend Settings")]
+    [SerializeField] int nonFriendHugCoolDown = 4;
+    public bool attemptAtHug = false;
+    public bool justBeenHugged = false;
+    //bools
+    bool fadingAway;
     bool takingNap = false;
     bool beenTakenAway = false;
-    HugScript hugs;
+    //numbers
     float Timer;
+    float fadeTimer;
+    int fadeCounter;
+
+    //components
+    HugScript hugs;
+    Animator ani;
     Rigidbody2D rb;
     CapsuleCollider2D cc;
     CapsuleCollider2D childcc;
@@ -44,6 +56,7 @@ public class FriendHugLimit : MonoBehaviour
     void Update()
     {
         Timer += Time.deltaTime;
+        fadeTimer += Time.deltaTime;
         if (Friend)
         {
             FriendActivites();
@@ -52,6 +65,7 @@ public class FriendHugLimit : MonoBehaviour
         {
             NonFriendActivites();
         }
+        Dissapear();
     }
     void FriendActivites()
     {
@@ -67,7 +81,7 @@ public class FriendHugLimit : MonoBehaviour
         if (takingNap == true && Timer >= napUntilRelocated && beenTakenAway == false) //removes character from being seen
         {
             Debug.Log("'Relocate'");
-            ani.SetTrigger("isRelocate");
+            fadingAway = true;
             childcc.enabled = false;
             takeAwayBox.enabled = true;
             Timer = 0;
@@ -81,12 +95,52 @@ public class FriendHugLimit : MonoBehaviour
     }
     void NonFriendActivites()
     {
-        if(attemptAtHug == true)
+        if(attemptAtHug == true && justBeenHugged == false)
         {
             Debug.Log("NO");
             ani.SetTrigger("AtemptedHug");
             Timer = 0;
+            justBeenHugged = true;
         }
-        
+        if (Timer >= nonFriendHugCoolDown && justBeenHugged == true)
+        {
+            justBeenHugged = false;
+            Timer = 0;
+        }
+    }
+    void Dissapear()
+    {
+        if (fadingAway) //disapears after being hugged
+        {
+            if (fadeCounter == 0 && fadeTimer >= betweenfade)
+            {
+                fadeCounter++;
+                fadeTimer = 0;
+            }
+            else if(fadeCounter == 1 && fadeTimer >= betweenfade)
+            {
+                sr.color = new Color(1f, 1f, 1f, .75f);
+                fadeCounter += 1;
+                fadeTimer = 0;
+            }
+            else if(fadeCounter == 2 && fadeTimer >= betweenfade)
+            {
+                sr.color = new Color(1f, 1f, 1f, .5f);
+                fadeCounter += 1;
+                fadeTimer = 0;
+            }
+            else if(fadeCounter == 3 && fadeTimer >= betweenfade)
+            {
+                sr.color = new Color(1f, 1f, 1f, .25f);
+                fadeCounter += 1;
+                fadeTimer = 0;
+            }
+            else if (fadeCounter == 4 && fadeTimer >= betweenfade)
+            {
+                sr.color = new Color(1f, 1f, 1f, .0f);
+                fadeCounter += 1;
+                fadeTimer = 0;
+            }
+        }
     }
 }
