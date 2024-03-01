@@ -500,7 +500,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 4, y: 4}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -509,6 +509,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &685055970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685055958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b3efdc94b59804d97bf0d40c4ea013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &707649177
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,6 +536,7 @@ GameObject:
   - component: {fileID: 707649182}
   - component: {fileID: 707649183}
   - component: {fileID: 707649184}
+  - component: {fileID: 707649185}
   m_Layer: 0
   m_Name: NonFriend
   m_TagString: NonFriend
@@ -644,8 +657,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -164926102, guid: 8940863ee372faa4e97552b56d9f8760, type: 3}
-  m_Color: {r: 0.17507683, g: 0.9150943, b: 0.13381095, a: 1}
+  m_Sprite: {fileID: 514703160, guid: 7631f3b1cb9d4be429a6b96a76b2c338, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -715,7 +728,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 4, y: 4}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -751,6 +764,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &707649185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707649177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b3efdc94b59804d97bf0d40c4ea013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &882127883 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3402262186389160138, guid: 0fb5d9280aca8424fa35d41c48849d29, type: 3}
@@ -1604,7 +1629,7 @@ PrefabInstance:
     - target: {fileID: 7831384840949152351, guid: cccbe41905136d347bdbac52890f7c93, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 2069505076, guid: db8a49d5e2261d74b8fc2b8bb471ec5c, type: 3}
+      objectReference: {fileID: -87673034, guid: cffc8c75e90ea494d8ec77da9d32bdd6, type: 3}
     - target: {fileID: 7831384840949152351, guid: cccbe41905136d347bdbac52890f7c93, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -1635,6 +1660,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2020067086030680462, guid: cccbe41905136d347bdbac52890f7c93, type: 3}
       insertIndex: -1
       addedObject: {fileID: 685055965}
+    - targetCorrespondingSourceObject: {fileID: 2020067086030680462, guid: cccbe41905136d347bdbac52890f7c93, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 685055970}
   m_SourcePrefab: {fileID: 100100000, guid: cccbe41905136d347bdbac52890f7c93, type: 3}
 --- !u!1001 &3750301015129557985
 PrefabInstance:
@@ -1655,7 +1683,7 @@ PrefabInstance:
     - target: {fileID: 6598524722852855670, guid: 4004fba7a0b1a5746b44ebb265bcaa75, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -788782643, guid: de12d47aeac4c6643b2dfdce84641681, type: 3}
+      objectReference: {fileID: 2026688113, guid: 895f7a93e5e16204fbc258b0dcf55828, type: 3}
     - target: {fileID: 6598524722852855670, guid: 4004fba7a0b1a5746b44ebb265bcaa75, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1

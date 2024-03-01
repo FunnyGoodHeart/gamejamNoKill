@@ -110,7 +110,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: tempPlayerIdle
+  m_Name: playerIdle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -125,7 +125,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 8d3a94b2ac4156947821bfca5736c8a1, type: 2}
+  m_Motion: {fileID: 7400000, guid: 70915f076c016b747ad9facef723121d, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -264,7 +264,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: ff5233079f2cad04f98014569827c1b0, type: 2}
+    m_Motion: {fileID: 7400000, guid: 8f05c387d2c119d49a439328f6438532, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: -1}
     m_TimeScale: 1
@@ -272,7 +272,7 @@ BlendTree:
     m_DirectBlendParameter: Horizontal
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: ff5233079f2cad04f98014569827c1b0, type: 2}
+    m_Motion: {fileID: 7400000, guid: c5a5e9d3e266e6043be2d9c91952c27f, type: 2}
     m_Threshold: 0.33333334
     m_Position: {x: 0, y: 1}
     m_TimeScale: 1
@@ -280,7 +280,7 @@ BlendTree:
     m_DirectBlendParameter: Horizontal
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 1747fb860ed9c0146a6430fa35c75408, type: 2}
+    m_Motion: {fileID: 7400000, guid: 09f73d290dfa3c94499d92387f865ca5, type: 2}
     m_Threshold: 0.6666667
     m_Position: {x: -1, y: 0}
     m_TimeScale: 1
@@ -288,7 +288,7 @@ BlendTree:
     m_DirectBlendParameter: Horizontal
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 1747fb860ed9c0146a6430fa35c75408, type: 2}
+    m_Motion: {fileID: 7400000, guid: a97d7922e955999428edf1085bd665a6, type: 2}
     m_Threshold: 1
     m_Position: {x: 1, y: 0}
     m_TimeScale: 1
@@ -309,7 +309,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TempPlayerWhaa
+  m_Name: PlayerWhaa
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -323,7 +323,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e04e1b62d4cd2b543b47fe96630dff81, type: 2}
+  m_Motion: {fileID: 7400000, guid: 96c32a540f323de4d9fc234124e5d6b2, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

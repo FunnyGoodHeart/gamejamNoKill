@@ -10,6 +10,8 @@ public class HugScript : MonoBehaviour
     [SerializeField]  int hugCount = 0;
     [SerializeField] float hugCoolDown = 1.5f;
     float hugCoolDownTimer;
+    bool onCoolDown;
+    bool coolDownJustStart = true;
     public int howLongSad = 3;
     public bool Crying;
     GameObject nearbyPerson;
@@ -18,6 +20,16 @@ public class HugScript : MonoBehaviour
     private void Update()
     {
         hugCoolDownTimer += Time.deltaTime;
+        if(onCoolDown == true && coolDownJustStart == true)
+        {
+            hugCoolDownTimer = 0;
+            coolDownJustStart = false;
+        }
+        else if (onCoolDown == true && coolDownJustStart == false && hugCoolDownTimer >= hugCoolDown)
+        {
+            onCoolDown = false;
+            coolDownJustStart = true;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -41,22 +53,24 @@ public class HugScript : MonoBehaviour
     void OnHug()
     {
         Debug.Log("Hug?");
-        if(CloseEnough == true && hugCoolDownTimer >= hugCoolDown)
+        if (CloseEnough == true && onCoolDown == false)
         {
-            hugCoolDownTimer = 0;
             if (personsPart.beenHugged == false && personsPart.Friend == true)
             {
                 Debug.Log("Hug!");
                 hugCount++;
                 personsPart.beenHugged = true;
                 hugCounterText.text = "Hugs Given: " + hugCount;
+                onCoolDown = true;
             }
             else if (personsPart.NonFriend == true && personsPart.justBeenHugged == false)
             {
                 Debug.Log("No Hug ;-;");
                 Crying = true;
                 personsPart.attemptAtHug = true;
+                onCoolDown = true;
             }
+            
         }
     }
 }
