@@ -9,6 +9,8 @@ public class TopDownMovement: MonoBehaviour
     HugScript hugs;
     Rigidbody2D rb;
     [SerializeField] float moveSpeed = 5.0f;
+    [SerializeField] Canvas EndScore;
+    TimerAndHugs stopgame;
     Animator ani;
     float cryTimer;
     Vector2 moveInput;
@@ -16,6 +18,7 @@ public class TopDownMovement: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        stopgame = EndScore.GetComponent<TimerAndHugs>();
         hugs = GetComponent<HugScript>();
         rb = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
@@ -39,7 +42,7 @@ public class TopDownMovement: MonoBehaviour
     }
     void OnMove(InputValue value)
     {
-        if(hugs.Crying == false)
+        if(hugs.Crying == false || hugs.huggingAni == false || stopgame.outofTime == false)
         {
             moveInput = value.Get<Vector2>();
         }

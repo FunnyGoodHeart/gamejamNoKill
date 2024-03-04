@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Friend
   - NonFriend
+  - wall
+  - ground
   layers:
   - Default
   - TransparentFX
