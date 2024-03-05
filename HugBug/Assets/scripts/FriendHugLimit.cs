@@ -11,7 +11,6 @@ public class FriendHugLimit : MonoBehaviour
     
     [Header("Main Settings")]
     [SerializeField] GameObject player;
-    [SerializeField] GameObject childCollision;
     [SerializeField] float timeUntilStartFade;
     [SerializeField] float betweenfade = .3f;
 
@@ -19,7 +18,6 @@ public class FriendHugLimit : MonoBehaviour
     [SerializeField] int napUntilRelocated = 10;
     [SerializeField] int distroyGameObject = 5;
     public bool beenHugged = false;
-
 
     [Header("NonFriend Settings")]
     [SerializeField] int nonFriendHugCoolDown = 4;
@@ -38,19 +36,16 @@ public class FriendHugLimit : MonoBehaviour
     HugScript hugs;
     Animator ani;
     Rigidbody2D rb;
-    CapsuleCollider2D cc;
-    CapsuleCollider2D childcc;
-    BoxCollider2D takeAwayBox;
+    PolygonCollider2D pc;
+    CircleCollider2D cc;
     SpriteRenderer sr;
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         ani = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        cc = GetComponent<CapsuleCollider2D>();
-        takeAwayBox = GetComponent<BoxCollider2D>();
-        takeAwayBox.enabled = false;
-        childcc = childCollision.GetComponent<CapsuleCollider2D>();
+        pc = GetComponent<PolygonCollider2D>();
+        cc = GetComponent<CircleCollider2D>();
     }
 
     void Update()
@@ -69,25 +64,27 @@ public class FriendHugLimit : MonoBehaviour
     }
     void FriendActivites()
     {
-        if (beenHugged == true && takingNap == false) //starts taking nap
+        if (beenHugged == true && takingNap == false) //charatcer hugs
         {
             Debug.Log("ZZZZZZ");
-            ani.SetTrigger("TakeNap");
+            sr.color = new Color(1f, 1f, 1f, 0f);
+            pc.enabled = false;
+            cc.enabled = false;
             Timer = 0;
             rb.mass = 100;
-            cc.enabled = false;
+            pc.enabled = false;
             takingNap = true;
         }
-        if (takingNap == true && Timer >= napUntilRelocated && beenTakenAway == false) //removes character from being seen
+        if (takingNap == true && Timer >= napUntilRelocated && beenTakenAway == false) //laying down
         {
             Debug.Log("'Relocate'");
+            sr.color = new Color(1f, 1f, 1f, 1f);
+            ani.SetTrigger("TakeNap");
             fadingAway = true;
-            childcc.enabled = false;
-            takeAwayBox.enabled = true;
             Timer = 0;
             beenTakenAway = true;
         }
-        if (beenTakenAway == true && Timer >= distroyGameObject) //removes game object by "relocating it"
+        if (beenTakenAway == true && Timer >= distroyGameObject) //gets removed
         {
             Debug.Log("bye bye");
             Destroy(gameObject);
@@ -104,6 +101,7 @@ public class FriendHugLimit : MonoBehaviour
         }
         if (Timer >= nonFriendHugCoolDown && justBeenHugged == true)
         {
+            attemptAtHug = false;
             justBeenHugged = false;
             Timer = 0;
         }
