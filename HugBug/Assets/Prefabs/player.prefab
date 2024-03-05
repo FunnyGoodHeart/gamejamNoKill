@@ -196,7 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hugCounterText: {fileID: 0}
   hugCount: 0
-  hugCoolDown: 1.5
+  hugCoolDown: 1
   howLongSad: 3
   Crying: 0
   huggingAni: 0
@@ -212,7 +212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f63d3f8db1825044597731a3228608ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 7
+  canvasParent: {fileID: 0}
 --- !u!95 &7226744184093025767
 Animator:
   serializedVersion: 5

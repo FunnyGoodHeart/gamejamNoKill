@@ -9,6 +9,10 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] Canvas pauseMenu;
 
     // Update is called once per frame
+    private void Start()
+    {
+        pauseMenu.enabled = false;
+    }
     void Update()
     {
 

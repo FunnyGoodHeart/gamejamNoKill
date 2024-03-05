@@ -7,7 +7,7 @@ using TMPro;
 public class HugScript : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI hugCounterText;
-    [SerializeField]  int hugCount = 0;
+    public int hugCount = 0;
     [SerializeField] float hugCoolDown = 1.5f;
     Animator ani;
     float hugCoolDownTimer;
@@ -39,12 +39,13 @@ public class HugScript : MonoBehaviour
             onCoolDown = false;
             coolDownJustStart = true;
         }
-        if(personsPart.Friend == true && huggingAni == true && timer >= hugTime)
+        if (huggingAni == true && timer >= hugTime)
         {
             timer = 0;
             ani.SetBool("hugging", false);
             huggingAni = false;
         }
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -79,6 +80,7 @@ public class HugScript : MonoBehaviour
                 hugCounterText.text = "Hugs Given: " + hugCount;
                 onCoolDown = true;
                 huggingAni = true;
+                CloseEnough = false;
                 timer = 0;
             }
             
