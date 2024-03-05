@@ -50,8 +50,8 @@ MonoBehaviour:
   timerText: {fileID: 789766718958222993}
   hugsTotalScore: {fileID: 3459903781763346814}
   Player: {fileID: 0}
-  HowManyFriends: 1
-  levelNumber: 1
+  HowManyFriends: 14
+  levelNumber: 2
   TimeInLevel: 60
   EndStats: {fileID: 6336168210299462536}
   nextLevel:
@@ -148,6 +148,26 @@ PrefabInstance:
     - target: {fileID: 1636534742689857040, guid: 6d437c30ebf806e49a6941bdac425013, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2748381206599538220, guid: 6d437c30ebf806e49a6941bdac425013, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596348349133987198, guid: 6d437c30ebf806e49a6941bdac425013, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596348349133987198, guid: 6d437c30ebf806e49a6941bdac425013, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1152572340, guid: a0adf06bf3ea7644ba1d6b4174e8b41d, type: 3}
+    - target: {fileID: 7442142913764388098, guid: 6d437c30ebf806e49a6941bdac425013, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 7.9724
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442142913764388098, guid: 6d437c30ebf806e49a6941bdac425013, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 217.6
       objectReference: {fileID: 0}
     - target: {fileID: 8864608857423661924, guid: 6d437c30ebf806e49a6941bdac425013, type: 3}
       propertyPath: m_SizeDelta.x
@@ -316,9 +336,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3465310023129084707}
     m_Modifications:
+    - target: {fileID: 708552207344374477, guid: 7b66014ac3fc9bb45952cc3a6437da14, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1528872105769496805, guid: 7b66014ac3fc9bb45952cc3a6437da14, type: 3}
       propertyPath: m_Name
       value: PauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941563331841294298, guid: 7b66014ac3fc9bb45952cc3a6437da14, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941563331841294298, guid: 7b66014ac3fc9bb45952cc3a6437da14, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 521331202, guid: a0adf06bf3ea7644ba1d6b4174e8b41d, type: 3}
+    - target: {fileID: 4378888982960097549, guid: 7b66014ac3fc9bb45952cc3a6437da14, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717094858399466918, guid: 7b66014ac3fc9bb45952cc3a6437da14, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717094858399466918, guid: 7b66014ac3fc9bb45952cc3a6437da14, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2006908824, guid: a0adf06bf3ea7644ba1d6b4174e8b41d, type: 3}
+    - target: {fileID: 6169304363144302284, guid: 7b66014ac3fc9bb45952cc3a6437da14, type: 3}
+      propertyPath: m_text
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6338067900941794044, guid: 7b66014ac3fc9bb45952cc3a6437da14, type: 3}
       propertyPath: m_Pivot.x
@@ -400,6 +448,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8217525871115418828, guid: 7b66014ac3fc9bb45952cc3a6437da14, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217525871115418828, guid: 7b66014ac3fc9bb45952cc3a6437da14, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1012449125, guid: a0adf06bf3ea7644ba1d6b4174e8b41d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

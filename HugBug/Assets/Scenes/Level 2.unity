@@ -74835,14 +74835,6 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 2040127931}
-    - target: {fileID: 2529452991737383231, guid: 6e67c104317bc4a4ebf6a902037c65bc, type: 3}
-      propertyPath: levelNumber
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2529452991737383231, guid: 6e67c104317bc4a4ebf6a902037c65bc, type: 3}
-      propertyPath: HowManyFriends
-      value: 14
-      objectReference: {fileID: 0}
     - target: {fileID: 3465310023129084707, guid: 6e67c104317bc4a4ebf6a902037c65bc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.2235117
