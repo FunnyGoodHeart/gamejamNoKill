@@ -43,14 +43,17 @@ public class TimerAndHugs : MonoBehaviour
     {
         if(levelNumber == 1)
         {
+            Debug.Log("1");
             SceneManager.LoadScene("Level 2");
         }
         else if(levelNumber == 2)
         {
+            Debug.Log("2");
             SceneManager.LoadScene("Level 3");
         }
         else if(levelNumber == 3)
         {
+            Debug.Log("3");
             SceneManager.LoadScene("Win Scene");
         }
     }
