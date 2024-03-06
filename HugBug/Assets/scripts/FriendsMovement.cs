@@ -25,7 +25,7 @@ public class FriendsMovement : MonoBehaviour
         thisTransform = this.transform;
         // Set a random time delay for taking a decision ( changing direction,or standing in place for a while )
         decisionTimeCount = Random.Range(decisionTime.x, decisionTime.y);
-
+        animator = GetComponent<Animator>();
         // Choose a movement direction, or stay in place
         ChooseMoveDirection();
     }
@@ -42,8 +42,9 @@ public class FriendsMovement : MonoBehaviour
 
         if (animator)
         {
-            animator.SetFloat("MoveX", xDir);
-            animator.SetFloat("MoveY", yDir);
+            animator.SetFloat("Horizontal", direction.x);
+            animator.SetFloat("Vertical", direction.y);
+            animator.SetFloat("Speed", direction.magnitude);
         }
 
         if (decisionTimeCount > 0) decisionTimeCount -= Time.deltaTime;

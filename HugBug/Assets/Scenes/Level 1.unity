@@ -22843,7 +22843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialcanvas: {fileID: 1275094218}
-  tutorialText: {fileID: 0}
+  tutorialText: {fileID: 763052543}
   timeUntildissapear: 5
 --- !u!114 &1275094216
 MonoBehaviour:
@@ -64754,8 +64754,12 @@ PrefabInstance:
       value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2529452991737383231, guid: 6e67c104317bc4a4ebf6a902037c65bc, type: 3}
+      propertyPath: levelNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2529452991737383231, guid: 6e67c104317bc4a4ebf6a902037c65bc, type: 3}
       propertyPath: HowManyFriends
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2529452991737383231, guid: 6e67c104317bc4a4ebf6a902037c65bc, type: 3}
       propertyPath: hugsTotalScore

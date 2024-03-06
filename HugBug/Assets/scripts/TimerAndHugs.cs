@@ -49,5 +49,9 @@ public class TimerAndHugs : MonoBehaviour
         {
             SceneManager.LoadScene("Level 3");
         }
+        else if(levelNumber == 3)
+        {
+            SceneManager.LoadScene("Win Scene");
+        }
     }
 }
